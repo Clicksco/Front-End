@@ -1,16 +1,15 @@
 {
-	"title": "DAUX.IO",
-	"tagline": "The Easiest Way To Document Your Project",
+	"title": "Clicksco - Front End Guidelines",
+	"tagline": "Clicksco Front End Guidelines Version 1.0",
 	"image": "img/app.png",
-	"theme": "navy",
+	"theme": "blue",
 	"date_modified": true,
-	"repo": "justinwalsh/daux.io",
-	"twitter": ["justin_walsh", "todaymade"],
-	"google_analytics": "UA-12653604-10",
+	"clean_urls": false,
+	"repo": "clicksco/front-end-standards",
 	"links": {
-		"Download": "https://github.com/justinwalsh/daux.io/archive/master.zip",
-		"GitHub Repo": "https://github.com/justinwalsh/daux.io",
-		"Help/Support/Bugs": "https://github.com/justinwalsh/daux.io/issues",
-		"Made by Todaymade": "http://todaymade.com"
+		"View Github Repo": "",
+		"View Front End Testing Strategy Documentation": "",
+		"View Front End Workflow Documentation": "",
+		"Download Boilerplate": ""
 	}
 }
