@@ -1,0 +1,56 @@
+#### You <b>SHOULD</b> implement attributes in the following order; id, class, data-*, anything additional
+
+Implementing attributes in this order allows for better readability and consistency. You <b>SHOULD</b> only add ID attributes when a certain element requires a JS-hook.
+
+*Bad Example*
+
+	<img href="some-image.jpg" id="some-js-hook" data-width="600" alt="some image" class="some-class" />
+
+*Good Example*
+
+	<img id="some-js-hook" class="some-class" data-width="600" href="some-image.jpg" alt="some image" />
+
+<br />
+
+#### You <b>MUST</b> write your Markup, having one element per line
+
+Writing Markup elements one per line, makes for better readability and maintainability.
+
+Also due to the indentation, this will allow maintainers to scan a document and understand the structure of a layout or module.
+
+*Bad Example*
+
+	<div><p><span>Some Text</span></p></div>
+
+*Good Example*
+
+	<div>
+    	<p>
+        	<span>Some Text</span>
+    	</p>
+	</div>
+
+<br />
+
+#### You <b>SHOULD</b> omit the type attribute from link and script tags within your Markup
+
+Specifying a type attribute on either the script or link element (unless you are not using CSS or JavaScript) is unnecessary, as HTML5 implies that text/css and text/javascript as default.
+
+<br />
+
+#### You <b>SHOULD</b> omit the protocol from any resources contained in your Markup
+
+Omitting the protocol section from the URLs which point to resources such as; images, scripts, stylesheets and any other media files will result in minor performance benefits, as well as preventing mixed content issues.
+
+*Resources*
+
+- [the protocol-relative URL](http://www.paulirish.com/2010/the-protocol-relative-url/)
+
+<br />
+
+#### You <b>SHOULD</b> indent your markup elements, to show parent-child relationships within your modules.
+
+This allows maintainers to scan the codebase and understand the hierarchy, without seeing a visual implementation.
+
+<br />
+

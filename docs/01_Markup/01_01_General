@@ -1,0 +1,17 @@
+#### You <b>MUST</b> use lowercase to code your markup tags, not uppercase
+
+This will make the markup within the codebase more readable, as well as follow good standards.
+
+*Bad Example*
+
+	<DIV>
+		<P>Some Text</P>
+	</DIV>
+
+*Good Example*
+
+	<div>
+		<p>Some Text</p>
+	</div>
+
+<br />

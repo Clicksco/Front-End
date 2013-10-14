@@ -149,7 +149,7 @@ if ($homepage && $homepage_url !== '/') {
 					<div class="text-center span12">
 						<?php if ($options['tagline']) { ?>
 							<h2>Clicksco Front End Guidelines</h2>
-							<p class="lead">The purpose of these documents is to provide guidelines for writing Front End code across the Organisation. Code conventions are important for the long-term maintainability. The goal is to have all code in any code-base within the organisation look like a single person typed it, even when many people are contributing to it.</p>
+							<p class="lead">The purpose of these documents is to provide guidelines for writing Front End code across the Organisation. Code conventions are important for the long-term maintainability of any project. The goal is to have all code in any code-base within the organisation look like a single person typed it, even when many people are contributing to it.</p>
 						<?php } ?>
 					</div>
 				</div>
