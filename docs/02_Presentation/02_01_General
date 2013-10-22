@@ -1,0 +1,115 @@
+#### You <b>MUST</b> use SCSS as your pre-processor of choice
+
+SCSS is the approach which the team have chosen to adopt moving forward.
+
+The decision to use SCSS over Sass, is down to the syntax being more familiar to a future Clicksco Front End Engineer who has no experience with pre-processors.
+
+*Resources*
+
+- [Sass Documentation](http://sass-lang.com/documentation/)
+
+<br />
+
+#### You <b>SHOULD</b> reduce the amount of properties you implement with shorthand notation
+
+Being explicit to the properties you want to set means you are not unnecessarily setting/unsetting properties which have no relevance to what you actually want to target.
+
+For example, unsetting the top margin on a certain element, does not require the following:
+
+	margin: 0;
+
+<br />
+
+#### You <b>MUST NOT</b> use pixel values
+
+With the responsive nature of the application and sites we create, using absolute units restricts the flexibility of components and does not allow your content to flow naturally when provided in different contexts.
+
+When you style type, spacing, position and layout components, you <b>MUST</b> use relative units such as REM, EM and Percentages.
+
+There are certain situations, where using absolute values is accepted:
+
+- Providing fallbacks to browsers which do not provide support for the REM unit. e.g. pixel fallback for Internet Explorer 8 and below.
+- Fixed dimensions for icons, backgrounds and components (sometimes this is required due to the design)
+- Implementing styles for box-shadow, borders, and any additional properties which are used for aesthetic purposes
+- Media query values (You SHOULD use EM values for accessibility purposes)
+
+*Resources*
+
+- [Can I still use px?](http://www.vanseodesign.com/css/em-px/)
+- [EM based media queries](http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/)
+
+<br />
+
+#### You <b>MUST</b> implement all statements, one per line within a declaration block
+
+This allows for better readability and makes it easier to debug any issues which may arise.
+
+Good Example:
+
+	.box {
+		background-color: red;
+		color: white;
+	}
+
+Bad Example:
+
+	.box { background-color: red; color: white; }
+
+<br />
+
+#### You <b>MUST</b> write all CSS Selectors in lowercase
+
+This will make the markup within the codebase more readable, as well as follow good standards.
+
+Good Example:
+
+	.header {
+		background-color: red;
+	}
+
+Bad Example:
+
+	.HEADER { 
+		background-color: red; 
+	}
+
+<br />
+
+#### You <b>MUST</b> implement any code which you feel should be refactored or you have rushed due to tight deadlines, in the shame.scss file, found in the base directory
+
+Having a set file for occasions specified above, make it easy for other maintainers to find code which could be refactored when downtime on a project is available.
+
+You <b>MUST</b> keep code which you feel hasn't been implemented to a high standard out of the main codebase, and abstract it away into this specific file.
+
+*Resources*
+
+- [shame.css](http://csswizardry.com/2013/04/shame-css/)
+
+<br />
+
+#### You <b>SHOULD</b> use !important within helper classes if you require styles to take precedence
+
+When you have helper classes which have a specific purpose and you know a certain style is necessary to display the notion of the element, using !important is advised.
+
+Example:
+
+	.warning {
+		color: yellow !important;
+	}
+
+Due to specificity issues, this approach is advised to an extent.
+
+You <b>MUST NOT</b> use !important to get you out of situations which are caused by a lack of thought beforehand. In circumstances like this, you should look into refactoring your styles and selectors.
+
+<br />
+
+#### You <b>MUST</b> create modules which are independent of certain markup elements, and can be re-used in multiple contexts
+
+Allowing modules to be independent of Markup elements allows for the following:
+
+- Reusability
+- Lower specificity with regards to your styles
+- Greater Performance (Browser workload decreased)
+
+<br />
+

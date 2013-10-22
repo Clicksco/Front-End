@@ -1,14 +1,28 @@
+#### You <b>MUST</b> not use ID selectors
+
+It is unnecessary to use ID's within your Markup as a Presentation/Behaivour hook, as this is stating that you feel the element is not to be reused within the site/application you are working on.
+
+Sticking specifically to classes, you allow for all elements to reused if the case may arise.
+
+Understanding that reusability is not just based on the aesthetic of an element is key to having a modular codebase.
+
+One exception to this rule, is using an ID selector for page linking purposes, for example:
+
+	<a href="my-page.html#my-id-selector"
+
+<br />
+
 #### You <b>SHOULD</b> implement attributes in the following order; id, class, data-*, anything additional
 
-Implementing attributes in this order allows for better readability and consistency. You <b>SHOULD</b> only add ID attributes when a certain element requires a JS-hook.
+Implementing attributes in this order allows for better readability and consistency. Please be aware that you <b>SHOULD</b> only add ID attributes when a certain element requires a hash location for page linking purposes.
 
 *Bad Example*
 
-	<img href="some-image.jpg" id="some-js-hook" data-width="600" alt="some image" class="some-class" />
+	<img href="some-image.jpg" id="some-page-location-hook" data-width="600" alt="some image" class="some-class" />
 
 *Good Example*
 
-	<img id="some-js-hook" class="some-class" data-width="600" href="some-image.jpg" alt="some image" />
+	<img id="some-page-location-hook" class="some-class" data-width="600" href="some-image.jpg" alt="some image" />
 
 <br />
 

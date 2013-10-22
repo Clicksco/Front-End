@@ -1,0 +1,56 @@
+#### You <b>MUST</b> use BEM notation to name and structure your objects
+
+BEM is the methadology we have choosen as a team to follow, and moving forward we hope to adapt our style as and when is necessary.
+
+Whilst it is required you use BEM to create your modules, it is recommended that you spend time upfront to understand your project structure and plan your reusable components.
+
+As stated, it is required that you use BEM for specifically modules, but when it comes to global elements, you should use hyphenated, lowercase words to create your class names, like so:
+
+*Example*
+
+	<div class="some-global-element"></div>
+
+This means that you use BEM sparingly, and only in situations where you feel patterns and abstractions exist.
+
+*Resources*
+
+- [A New Front-End Methadology: BEM](http://coding.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/)
+- [Fifty Shades of BEM](http://blog.kaelig.fr/post/48196348743/fifty-shades-of-bem)
+
+<br />
+
+#### You <b>SHOULD</b> name all of your classes so they are sensible and are not specific to the content
+
+Classes do not have any impact on semantics.
+
+You <b>SHOULD</b> use the following to name your classes;
+
+- Make it sensible, readable and understandable to yourself and the team
+- It <b>MUST NOT</b> be specific to the styling or content of the component
+- Make it future proof
+
+Don't worry about the length of the class name, the main thing is that it makes sense and it is understandable to yourself and the team.
+
+*Bad Example*
+
+	<div class="site-ct"></div>
+
+*Good Example*
+
+	<div class="site-content"></div>
+
+<br />
+
+#### You <b>MUST</b> prefix state specific classes with "is-"
+
+All state specific classes should be prefixed with "is-" to describe the UI which is present or expected.
+
+*Bad Example*
+
+	<div class="is-hidden"></div>
+
+*Resources*
+
+- [SMACSS State Rules](http://smacss.com/book/type-state)
+
+<br />

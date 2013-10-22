@@ -1,0 +1,13 @@
+#### You <b>SHOULD</b> add comments to start and end of large modules within your Markup
+
+This allows for great readability and allows maintainers to scan a document quickly if they would like to understand the structure or they are doing any debugging.
+
+*Example*
+	
+	<!-- content --->
+	<div class="content"> 
+		<p>Some Text</p>
+	</div> 
+	<!-- / content -->
+
+<br />
