@@ -1,0 +1,48 @@
+#### You <b>MUST</b> seperate selectors out on to multiple lines if a declaration block is shared
+
+This allows for better readability, as well as allows for more useful diffs.
+
+*Good Example:*
+
+	.box,
+	.box-one {
+	    display: inline-block;
+	}
+
+*Bad Example:*
+
+	.box, .box-one {
+	    display: inline-block;
+	}
+
+<br />
+
+#### You <b>SHOULD</b> cluster all properties within your declarations based on relationship e.g. spacing, typography
+
+Grouping properties in this way allows for better readability for maintainers of the codebases, and it is also important to have a consistent approach across all your Presentation files.
+
+The advantages of using this convention over Alphabetic ordering are that it is easier on the eye, and it makes more sense from an architectural standpoint.
+
+*Good Example:*
+
+	.box {
+		border: 1px solid red;
+		color: yellow;
+		font-size: 1.8rem;
+		line-height: 1.4em;
+		display: inline;
+		position: relative;
+	}
+
+*Bad Example:*
+
+	.box {
+		position: relative;
+		border: 1px solid red;
+		font-size: 1.8rem;
+		color: yellow;
+		display: inline;
+		line-height: 1.4em;
+	}
+
+<br />

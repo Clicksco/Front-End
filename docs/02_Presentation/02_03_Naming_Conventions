@@ -1,0 +1,37 @@
+#### You <b>SHOULD</b> write your comments in the format specified via the StyleDocco website
+
+Writing comments in this format will allow the Grunt task to produce a component library, which would be a great reference to new maintainers of your codebase.
+
+Even if you feel the style guide is not necessary for the project you are working on, implementing your comments in this way will allow other maintainers of the projects codebase a context in which the module would be used.
+
+*Resources:*
+
+- [Style Docco Website](http://jacobrask.github.io/styledocco/)
+
+<br />
+
+#### You <b>SHOULD</b> include comments which communicate a specific feature or decision back to your team
+
+If you implement a certain feature which you feel needs to be explained to maintainers to understand why it has been done a certain way, it is recommended that you provide a comment/s
+
+If this is a specific part of a declaration, please include a comment at the end of the property in the following format:
+
+*Example:*
+
+	.box {
+	       background-color: red; // Your comment
+	}
+
+*Note: if the codebase is legacy and does not support Sass commenting, please replace with the general CSS comment approach*
+
+If the comment is required for whole declaration blocks, please include the comment above the block, like so:
+
+*Example:*
+
+	// Your comment here
+
+	.box {
+	       background-color: red;
+	}
+	
+<br />
