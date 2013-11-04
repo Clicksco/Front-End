@@ -1,3 +1,5 @@
+# Clicksco Front End Engineering Guidelines
+
 This document contains guidelines for web applications/sites built by Clicksco, with regards to the Front End Engineering department.
 
 This document's primary motivation is to contain a set of standards which will allow the organisation to grow, whilst still maintaining code-bases which look as though one person has contributed to it.
