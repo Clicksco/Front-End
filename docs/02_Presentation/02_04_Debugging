@@ -1,0 +1,58 @@
+#### When implementing a polyfill, you <b>MUST</b> use the classes provided by Modernizr
+
+Using Modernizr allows you to detect features, and not resort to general browser hacks to provide fallback features for incapable browsers.
+
+These classes are stored on the HTML element within the Markup and are prefixed with "no-" if the feature is unsupported in a certain browser.
+
+*Example:*
+
+	.no-boxshadow .box {
+	     border: 1px solid red;
+	}
+
+<br />
+
+#### You <b>MUST NOT</b> use browser hacks to get around a certain unsupported feature or inconsistency
+
+Using browser hacks are not the best approach when implementing a fix for a certain inconsistency, as you have to document the need and requirement detail back to the team to understand what that certain piece of styling relates too.
+
+You <b>MUST</b> use the classes provided on the HTML element via Modernizr and the conditional statements.
+
+*Examples:*
+
+	.no-borderradius .box {
+	     border: 1px solid #CCC;
+	}
+
+	.ie8 .box {
+	     border: 1px solid #CCC;
+	}
+	
+<br />
+
+#### You <b>SHOULD</b> always remove code first before adding any additional properties
+
+The problem exists in the current codebase, so adding more properties is just a cover up and not a solution.
+
+To debug a problem correctly, you SHOULD remove properties from the source of the issue in a bid to resolve the problem.
+
+<br />
+
+#### If you are too add properties whilst debugging, you <b>SHOULD</b> outdent these properties.
+
+Outdenting properties which you have added for debugging purposes will allow you to remove any unnecessary styling which has only been added to source an issue.
+
+*Example:*
+
+	.box {
+	border: 1px solid red;
+	      font-size: 1.4rem;
+	      position: absolute;
+	overflow: hidden;
+	}
+
+*Resources:*
+
+- [Outdenting Properties for CSS Debugging](http://sunpig.com/martin/archives/2012/03/25/outdenting-properties-for-debug-css.html)
+
+<br />

@@ -1,0 +1,97 @@
+#### You <b>MUST</b> use @extend when working with module to inherit from the base element
+
+Using @extend will allow you to remove the bloat which may exist within your class attribute contained in your module's markup.
+
+Because, as a team we work using BEM notation, a modifier or child element are prefixed with the base class, so for readability purposes within your Markup, there is no need to contain both the base element and the modifier within the class attribute.
+
+*Example:*
+
+	.site-message {
+	     color: white;
+	     font-size: 1.4rem;
+	}
+
+	.site-message--error {
+	     @extend .site-message;
+	     background-color: red;
+	}
+
+With regards to file size, this is not so much of an issue, as GZIP will take care of any duplication contained within your partials.
+
+*Note: This also applies to utility and helper methods too.*
+
+<br />
+
+#### You <b>MUST NOT</b> go any deeper than 3 levels within your SCSS declarations
+
+For specificity purposes, you should make sure that you do not nest your selectors any deeper than three levels.
+
+Going deeper than 3 levels could result in an element which is no longer modular, as well as your styles being reliant on a certain Markup structure.
+
+*Good Example:*
+
+	.box {
+	     background: green;
+
+	     .content {
+	         font-size: 1.4rem;
+
+	         a {
+	               color: blue;
+	         }
+
+	    }
+
+	}
+
+*Bad Example:*
+
+	.box {
+	     background: green;
+
+	     .content {
+	         font-size: 1.4rem;
+
+	         a {
+	               color: blue;
+
+	              span {
+	                    font-weight: bold;                  
+	              }
+
+	         }
+
+	    }
+
+	}
+
+	
+<br />
+
+#### You <b>SHOULD</b> store values which are referenced numerous times within variables
+
+This allows for better maintainability, as well as if it is requested that the primary colour or font-family requires changing, you only have to change it in one location.
+
+*Good Example:*
+
+	$colorTypeAlpha: #000
+
+	p { 
+	    color: $colorTypeAlpha; 
+	}
+
+	h1 { 
+	    color: $colorTypeAlpha;
+	}
+
+*Bad Example:*
+
+	p { 
+	    color: #000; 
+	}
+
+	h1 { 
+	    color: #000;
+	}
+
+<br />
