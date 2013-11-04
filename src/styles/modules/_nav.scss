@@ -1,0 +1,57 @@
+// =============================
+// Global Nav Block Styling
+// =============================
+
+/* By default, the global Nav module will display a list of elements in an inline fashion
+
+    <ul class="nav">
+       <li><a href="#">Home</a></li>
+       <li><a href="#">About</a></li>
+       <li><a href="#">Portfolio</a></li>
+       <li><a href="#">Contact</a></li>
+   </ul>
+*/
+
+.nav {
+    list-style: none;
+    margin-left: 0;
+    @include clearfix;
+
+    > li {
+
+        > a {
+          display: inline-block;
+        }
+
+    }
+
+}
+
+// =============================
+// Nav - Stacked Modifier Styling
+// =============================
+
+/* By default, the global Nav module will display a list of elements in an inline fashion
+
+    <ul class="nav--stacked">
+       <li><a href="#">Home</a></li>
+       <li><a href="#">About</a></li>
+       <li><a href="#">Portfolio</a></li>
+       <li><a href="#">Contact</a></li>
+   </ul>
+*/
+
+.nav--stacked{
+    @extend .nav;
+
+    > li {
+        display: list-item;
+
+        > a {
+            display: block;
+        }
+
+    }
+
+}
+

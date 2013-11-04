@@ -1,0 +1,58 @@
+// =============================================================================
+// Reset Styles
+// =============================================================================
+
+* { 
+    box-sizing: border-box; 
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+blockquote, 
+pre, 
+dl, 
+dd, 
+form, 
+fieldset, 
+legend, 
+table, 
+th, 
+td, 
+caption, 
+hr {
+    margin:0;
+    padding:0;
+}
+
+abbr[title],
+dfn[title] { 
+    cursor:help; 
+}
+
+img { 
+	font-style:italic; 
+	height: auto;
+}
+
+label, 
+input, 
+textarea, 
+button, 
+select, 
+option { 
+    cursor:pointer; 
+}
+
+    input[type="text"]:active, 
+    input[type="text"]:focus, 
+    textarea:active, 
+    textarea:focus {
+        cursor:text;
+        outline:none;
+    }
+    

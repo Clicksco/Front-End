@@ -1,0 +1,51 @@
+// =============================
+// Text Utility Helper Methods
+// =============================
+
+//
+// Text truncation
+//
+// Prevent text from wrapping onto multiple lines, and truncate with an
+// ellipsis.
+//
+// 1. Ensure that the node has a maximum width after which truncation can
+//   occur.
+// 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
+//    nodes.
+//
+
+.text-truncate {
+    max-width: 100%; // 1
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    word-wrap: normal !important; // 2
+}
+
+// =============================
+// State Utility Helper Methods
+// =============================
+
+//
+// Removed completely from document, and not visible to screen readers
+//
+
+.is-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+//
+// Completely remove from the flow but leave available to screen readers.
+//
+
+.is-hidden-visually {
+    position: absolute !important;
+    overflow: hidden !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+}
+

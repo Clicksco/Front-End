@@ -1,7 +1,29 @@
-* {
-  box-sizing: border-box;
-  &:before,
-  &:after {
-    box-sizing: border-box;
-  }
-}
+// =============================
+// Global Partial Import
+// =============================
+
+@import 'global/all';
+
+// =============================
+// Base Partial Import
+// =============================
+
+@import 'base/all';
+
+// =============================
+// Modules Partial Import
+// =============================
+
+@import 'modules/all';
+
+// =============================
+// Vendor Partial Import
+// =============================
+
+@import 'vendor/all';
+
+// =============================
+// Shame Partial Import
+// =============================
+
+@import 'global/shame';
