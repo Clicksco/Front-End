@@ -29,11 +29,6 @@ hr {
     padding:0;
 }
 
-abbr[title],
-dfn[title] { 
-    cursor:help; 
-}
-
 img { 
 	font-style:italic; 
 	height: auto;
@@ -47,12 +42,4 @@ select,
 option { 
     cursor:pointer; 
 }
-
-    input[type="text"]:active, 
-    input[type="text"]:focus, 
-    textarea:active, 
-    textarea:focus {
-        cursor:text;
-        outline:none;
-    }
     

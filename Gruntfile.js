@@ -11,16 +11,6 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
 
-    /**
-     * Project details
-     */
-
-    // Banner to be used on compiled files
-    banner: '/*!\n' +
-            ' * <%= pkg.title %> v<%= pkg.version %>\n' +
-            ' * Copyright <%= pkg.author.name %> (<%= pkg.author.url %>) <%= grunt.template.today("yyyy") %>\n' +
-            ' */\n',
-
     // Root dir setup
     src:  'src',
     dist: 'dist',
@@ -80,8 +70,7 @@ module.exports = function(grunt) {
     // Concatenate JS
     concat: {
       options: {
-        stripBanners: true,
-        banner: '<%= banner %>'
+        stripBanners: true
       },
       js: {
         nonull: true,
@@ -92,9 +81,6 @@ module.exports = function(grunt) {
 
     // Uglify
     uglify: {
-      options: {
-        banner: '<%= banner %>'
-      },
       dist: {
         src: ['<%= concat.js.dest %>'],
         dest: '<%= scripts.dist.compressed %>'
@@ -110,7 +96,6 @@ module.exports = function(grunt) {
     sass: {
       dev: {
         options: {
-          banner: '<%= banner %>',
           style: 'expanded',
           sourcemap: true, // Requires Sass 3.3.0 alpha: `sudo gem install sass --pre`
           trace: true
@@ -144,7 +129,6 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         options: {
-          banner: '<%= banner %>',
           keepSpecialComments: 0,
           report: 'min'
         },
