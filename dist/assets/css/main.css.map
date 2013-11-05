@@ -1,6 +1,0 @@
-{
-"version": "3",
-"mappings": "AAAA,CAAE;EACA,UAAU,EAAE,UAAU;;AACtB,iBACQ;EACN,UAAU,EAAE,UAAU",
-"sources": ["../../../src/styles/main.scss"],
-"file": "main.css"
-}

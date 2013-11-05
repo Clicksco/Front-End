@@ -2,20 +2,15 @@
 
 module.exports = function(grunt) {
 
-  // Auto load tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
 
-    // Read package.json
     pkg: grunt.file.readJSON('package.json'),
 
-
-    // Root dir setup
     src:  'src',
     dist: 'dist',
 
-    // Project setup
     scripts: {
       src: {
         dir: '<%= src %>/scripts',
@@ -24,9 +19,9 @@ module.exports = function(grunt) {
         ],
       },
       dist: {
-        dir: '<%= dist %>/assets/js',
+        dir: '<%= dist %>/js',
         uncompressed: '<%= scripts.dist.dir %>/main.js',
-        compressed:   '<%= scripts.dist.dir %>/main.min.js'
+        compressed:   '<%= scripts.dist.dir %>/compressed/main.min.js'
       }
     },
 
@@ -38,9 +33,9 @@ module.exports = function(grunt) {
         ],
       },
       dist: {
-        dir: '<%= dist %>/assets/css',
+        dir: '<%= dist %>/css',
         uncompressed: '<%= styles.dist.dir %>/main.css',
-        compressed:   '<%= styles.dist.dir %>/main.min.css'
+        compressed:   '<%= styles.dist.dir %>/compressed/main.min.css'
       }
     },
 
@@ -49,16 +44,10 @@ module.exports = function(grunt) {
         dir: '<%= src %>/images',
       },
       dist: {
-        dir: '<%= dist %>/assets/img',
+        dir: '<%= dist %>/images',
       }
     },
 
-
-    /**
-     * Scripts Tasks
-     */
-
-    // JShint
     jshint: {
       gruntfile: 'Gruntfile.js',
       files: ['<%= scripts.src.files %>'],
@@ -67,19 +56,14 @@ module.exports = function(grunt) {
       }
     },
 
-    // Concatenate JS
     concat: {
-      options: {
-        stripBanners: true
-      },
       js: {
         nonull: true,
-        src: '<%= jshint.files %>',
+        src: '<%= scripts.src.files %>',
         dest: '<%= scripts.dist.uncompressed %>'
       }
     },
 
-    // Uglify
     uglify: {
       dist: {
         src: ['<%= concat.js.dest %>'],
@@ -87,18 +71,10 @@ module.exports = function(grunt) {
       },
     },
 
-
-    /**
-     * Styles Tasks
-     */
-
-    // Sass compile
     sass: {
       dev: {
         options: {
           style: 'expanded',
-          sourcemap: true, // Requires Sass 3.3.0 alpha: `sudo gem install sass --pre`
-          trace: true
         },
         files: {
           '<%= styles.dist.uncompressed %>': '<%= styles.src.files %>'
@@ -106,7 +82,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Autoprefixer
     autoprefixer: {
       dist: {
         options: {
@@ -125,7 +100,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Minify CSS
     cssmin: {
       combine: {
         options: {
@@ -138,16 +112,10 @@ module.exports = function(grunt) {
       }
     },
 
-
-    /**
-     * Image Tasks
-     */
-
-    // imagemin
     imagemin: {
       dist: {
         options: {
-          optimizationLevel: 3, // PNG
+          optimizationLevel: 4, // PNG
           progressive: true     // JPG
         },
         files: [{
@@ -159,30 +127,28 @@ module.exports = function(grunt) {
       }
     },
 
-
-    /**
-     * Misc Tasks
-     */
-
-    // Clean
-    clean: {
-      img: [
-        '<%= images.dist.dir %>/**/*'
-      ],
-      js: [
-        '<%= scripts.dist.dir %>/**/*'
-      ],
-      css: [
-        '<%= styles.dist.dir %>/**/*'
-      ],
+    styleguide: {
+      styledocco: {
+        options: {
+          framework: {
+            name: 'kss'
+          },
+          name: 'Clicksco Boilerplate Styleguide',
+          template: {
+            include: ['<%= styles.dist.dir %>/main.css']
+          }
+        },
+        files: {
+          'docs/styles': '<%= styles.dist.dir %>/main.css'
+        },
+      }
     },
 
-    // Notify
     notify: {
       sass: {
         options: {
           title: 'Success!',
-          message: 'Your SCSS has successfully compiled'
+          message: 'Your styles has successfully compiled'
         }
       },
       scripts: {
@@ -194,7 +160,7 @@ module.exports = function(grunt) {
       gruntfile: {
         options: {
           title: 'Success!',
-          message: 'Your Gruntfile is awesome'
+          message: 'Your Gruntfile is up to date'
         }
       },
       images: {
@@ -205,7 +171,6 @@ module.exports = function(grunt) {
       },
     },
 
-    // Watch
     watch: {
       gruntfile: {
         files: 'Gruntfile.js',
@@ -214,7 +179,7 @@ module.exports = function(grunt) {
 
       sass: {
         files: 'src/styles/**/*.scss',
-        tasks: ['sass:dev', 'autoprefixer', 'cssmin', 'notify:sass']
+        tasks: ['sass:dev', 'autoprefixer', 'cssmin', 'notify:sass', 'styleguide']
       },
 
       scripts: {
@@ -229,7 +194,7 @@ module.exports = function(grunt) {
 
       livereload: {
         options: {
-          livereload: true
+          livereload: 9000
         },
         files: [
           'Gruntfile.js',      // reload on Gruntfile change
@@ -240,28 +205,6 @@ module.exports = function(grunt) {
 
   });
 
-
-  /**
-   * Tasks
-   */
-
-  // Default: $ grunt
-  grunt.registerTask('default', [
-    'clean',
-    'jshint',
-    'concat',
-    'uglify',
-    'sass:dev',
-    'autoprefixer',
-    'cssmin',
-    'imagemin',
-    'notify'
-  ]);
-
-  // Run default task then watch: $ grunt w
-  grunt.registerTask('w', [
-    'default',
-    'watch'
-  ]);
+  grunt.registerTask('default', ['watch']);
 
 };
