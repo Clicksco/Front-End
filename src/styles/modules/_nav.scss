@@ -3,15 +3,15 @@
 // =============================
 
 /* By default, the global Nav module will display a list of elements in an inline fashion
+    
+    Example Markup:
 
-Markup: <ul class="nav">
-           <li><a href="#">Home</a></li>
-           <li><a href="#">About</a></li>
-           <li><a href="#">Portfolio</a></li>
-           <li><a href="#">Contact</a></li>
-        </ul>
-
-Styleguide Modules - Nav
+    <ul class="nav">
+       <li><a href="#">Home</a></li>
+       <li><a href="#">About</a></li>
+       <li><a href="#">Portfolio</a></li>
+       <li><a href="#">Contact</a></li>
+    </ul>
 
 */
 
@@ -34,7 +34,9 @@ Styleguide Modules - Nav
 // Nav - Stacked Modifier Styling
 // =============================
 
-/* By default, the global Nav module will display a list of elements in an inline fashion
+/* The stacked modifier will display elements in a block level fashion
+    
+    Example Markup:
 
     <ul class="nav--stacked">
        <li><a href="#">Home</a></li>
