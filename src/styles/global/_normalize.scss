@@ -58,8 +58,7 @@ audio:not([controls]) {
 
 html {
     background: #FFF;
-    color: $color-type-alpha;
-    font-family: $font-family-alpha;
+    font-family: sans-serif;
     -webkit-text-size-adjust: 100%; // 1
     -ms-text-size-adjust: 100%; // 1
 }
@@ -70,7 +69,7 @@ button,
 input, 
 select,
 textarea {
-    font-family: $font-family-alpha;
+    font-family: sans-serif;
 }
 
 // Addresses margins handled incorrectly in IE6/7

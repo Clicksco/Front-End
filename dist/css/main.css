@@ -1,3 +1,42 @@
+.clearfix:before,
+.nav:before,
+.nav--stacked:before,
+.clearfix:after,
+.nav:after,
+.nav--stacked:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after,
+.nav:after,
+.nav--stacked:after {
+  clear: both;
+}
+
+.text-truncate {
+  max-width: 100%;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+}
+
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.is-hidden-visually {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
 article,
 aside,
 details,
@@ -29,7 +68,6 @@ audio:not([controls]) {
 
 html {
   background: #FFF;
-  color: black;
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -259,37 +297,16 @@ option {
   cursor: pointer;
 }
 
-.text-truncate {
-  max-width: 100%;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
-  word-wrap: normal !important;
-}
-
-.is-hidden {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.is-hidden-visually {
-  position: absolute !important;
-  overflow: hidden !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-}
-
 /* By default, the global Nav module will display a list of elements in an inline fashion
 
-    <ul class="nav">
-       <li><a href="#">Home</a></li>
-       <li><a href="#">About</a></li>
-       <li><a href="#">Portfolio</a></li>
-       <li><a href="#">Contact</a></li>
-    </ul>
+Markup: <ul class="nav">
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Portfolio</a></li>
+           <li><a href="#">Contact</a></li>
+        </ul>
+
+Styleguide Modules - Nav
 
 */
 
@@ -297,19 +314,6 @@ option {
 .nav--stacked {
   list-style: none;
   margin-left: 0;
-}
-
-.nav:before,
-.nav--stacked:before,
-.nav:after,
-.nav--stacked:after {
-  content: " ";
-  display: table;
-}
-
-.nav:after,
-.nav--stacked:after {
-  clear: both;
 }
 
 .nav > li > a,

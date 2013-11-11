@@ -4,19 +4,21 @@
 
 /* By default, the global Nav module will display a list of elements in an inline fashion
 
-    <ul class="nav">
-       <li><a href="#">Home</a></li>
-       <li><a href="#">About</a></li>
-       <li><a href="#">Portfolio</a></li>
-       <li><a href="#">Contact</a></li>
-    </ul>
+Markup: <ul class="nav">
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Portfolio</a></li>
+           <li><a href="#">Contact</a></li>
+        </ul>
+
+Styleguide Modules - Nav
 
 */
 
 .nav {
+    @extend .clearfix;
     list-style: none;
     margin-left: 0;
-    @include clearfix;
 
     > li {
 

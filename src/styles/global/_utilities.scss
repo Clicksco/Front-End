@@ -1,4 +1,22 @@
 // =============================
+// Global Helper Methods
+// =============================
+
+.clearfix {
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+}
+
+// =============================
 // Text Utility Helper Methods
 // =============================
 

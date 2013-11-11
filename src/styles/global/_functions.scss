@@ -1,0 +1,39 @@
+// =============================
+// Unit Calculation Functions
+// =============================
+
+// Calculate a percentage value using the formula: target ÷ context
+
+//   Parameter Description:
+//
+//   $target - The value (in pixels) of the elements property you are setting the percentage for
+//   $context - The value (in pixels) of the parent elements property
+//
+
+//   Example Use:
+//
+//   width: calc-percent(300, 960);
+//
+
+@function calc-percent($target, $context ) {
+    @return $target / $context * 100%;
+}
+
+// Calculate a EM value using the formula: target ÷ context
+// Your context is the font-size of the parent element. 
+// If you set the value on a textual element, your context is the element font-size
+
+//   Parameter Description:
+//
+//   $target - The value (in pixels) of the elements property you are setting the EM value for
+//   $context - The value (in pixels) of the parent elements property
+//
+
+// Example Use:
+//
+//    margin-right: calc-em(20, 16);
+//
+
+@function calc-em( $target, $context ) {
+    @return $target / $context * 1em;
+}

@@ -127,40 +127,23 @@ module.exports = function(grunt) {
       }
     },
 
-    styleguide: {
-      styledocco: {
-        options: {
-          framework: {
-            name: 'kss'
-          },
-          name: 'Clicksco Boilerplate Styleguide',
-          template: {
-            include: ['<%= styles.dist.dir %>/main.css']
-          }
-        },
-        files: {
-          'docs/styles': '<%= styles.dist.dir %>/main.css'
-        },
-      }
-    },
-
     notify: {
       sass: {
         options: {
           title: 'Success!',
-          message: 'Your styles has successfully compiled'
+          message: 'Your styles have been successfully compiled'
         }
       },
       scripts: {
         options: {
           title: 'Success!',
-          message: 'Your scripts have successfully compiled'
+          message: 'Your scripts have been successfully compiled'
         }
       },
       gruntfile: {
         options: {
           title: 'Success!',
-          message: 'Your Gruntfile is up to date'
+          message: 'Your Gruntfile has been reloaded'
         }
       },
       images: {
@@ -179,7 +162,7 @@ module.exports = function(grunt) {
 
       sass: {
         files: 'src/styles/**/*.scss',
-        tasks: ['sass:dev', 'autoprefixer', 'cssmin', 'notify:sass', 'styleguide']
+        tasks: ['sass:dev', 'autoprefixer', 'cssmin', 'notify:sass']
       },
 
       scripts: {

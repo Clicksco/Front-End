@@ -1,0 +1,24 @@
+// =============================
+// Unit Calculation Mixins
+// =============================
+
+// Calculate the REM unit, and return both pixels and REMs to support older browsers
+
+//   Parameter Description:
+//
+//   $property - The property which you want to set the REM value on.
+//   $value - The value (in pixels) of the elements property you are setting the REM value for
+//   $context - This value is mapped back to the $base-font-size variable set within the _vars.scss partial
+//
+
+// Example Use:
+//
+//   include calc-rem("font-size", 16px);
+//
+
+@mixin calc-rem($property, $value, $context: $base-font-size) {
+    #{$property}: $value;
+    #{$property}: cr($value, $context);
+}
+
+
