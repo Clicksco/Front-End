@@ -17,7 +17,44 @@
 }
 
 // =============================
-// Text Utility Helper Methods
+// Layout Utility Helper Methods
+// =============================
+
+// Full Width
+
+.one-whole {
+  width: 100%;
+}
+
+// Halfs
+
+.one-half {
+  width: 50%;
+}
+
+// Thirds
+
+.one-third {
+  width: 33.3%;
+}
+
+.two-thirds {
+  width: 66.6%;
+}
+
+// Quarters
+
+.one-quarter {
+  width: 25%;
+}
+
+.three-quarters {
+  width: 75%;
+}
+
+
+// =============================
+// Typography Utility Helper Methods
 // =============================
 
 //

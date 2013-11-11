@@ -14,6 +14,30 @@
   clear: both;
 }
 
+.one-whole {
+  width: 100%;
+}
+
+.one-half {
+  width: 50%;
+}
+
+.one-third {
+  width: 33.3%;
+}
+
+.two-thirds {
+  width: 66.6%;
+}
+
+.one-quarter {
+  width: 25%;
+}
+
+.three-quarters {
+  width: 75%;
+}
+
 .text-truncate {
   max-width: 100%;
   overflow: hidden !important;
