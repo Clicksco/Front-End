@@ -1,4 +1,10 @@
 // =============================
+// Vendor Partial Import
+// =============================
+
+@import 'vendor/all';
+
+// =============================
 // Global Partial Import
 // =============================
 
@@ -11,16 +17,16 @@
 @import 'base/all';
 
 // =============================
+// Section Partial Import
+// =============================
+
+@import 'sections/all';
+
+// =============================
 // Modules Partial Import
 // =============================
 
 @import 'modules/all';
-
-// =============================
-// Vendor Partial Import
-// =============================
-
-@import 'vendor/all';
 
 // =============================
 // Shame Partial Import
