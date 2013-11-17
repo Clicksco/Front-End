@@ -321,9 +321,9 @@ option {
   cursor: pointer;
 }
 
-/* By default, the global Nav module will display a list of elements in an inline fashion
-    
-    Example Markup:
+/*
+
+By default, the global nav module will display a list of elements in an inline fashion
 
     <ul class="nav">
        <li><a href="#">Home</a></li>
@@ -345,9 +345,9 @@ option {
   display: inline-block;
 }
 
-/* The stacked modifier will display elements in a block level fashion
-    
-    Example Markup:
+/*
+
+The stacked modifier will display elements in a block level fashion
 
     <ul class="nav--stacked">
        <li><a href="#">Home</a></li>

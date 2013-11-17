@@ -187,7 +187,8 @@ module.exports = function(grunt) {
     }
 
   });
-
+  
+  grunt.loadNpmTasks('sassdown');
   grunt.registerTask('default', ['watch']);
 
 };
