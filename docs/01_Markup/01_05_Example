@@ -1,0 +1,30 @@
+This is an example of some sample markup which contains some of conventions specified in this section.
+
+	<!-- wrapper -->
+	<div class="wrapper">
+		<ul class="nav--alpha">
+			<li class="nav--alpha__item">
+				<a href="#media-object-item">List Item</a>
+			</li>
+			<li class="nav--alpha__item">
+				<a href="#">List Item</a>
+			</li>
+			<li class="nav--alpha__item">
+				<a href="#">List Item</a>
+			</li>
+		</ul>
+		<div class="main-content">
+			<div class="media">
+				<aside class="media__image">
+					<img id="media-object-image" src="#" alt="Media Object Image" />
+				</aside>
+				<section class="media__body">
+					<p>Media Object Body</p>
+					<span>Media Object Meta</span>
+				</section>
+			</div>
+		</div>
+	</div>
+	<!-- /wrapper -->
+
+<br />

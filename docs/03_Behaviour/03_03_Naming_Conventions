@@ -1,0 +1,97 @@
+#### When naming custom properties and methods in your Behaviour, you <b>MUST</b> be descriptive.
+
+This allows the maintainers of the codebase, to understand what the functionality/value is/does before viewing it in further depth.
+
+*Bad Example*
+
+	function p() {
+
+	}
+
+*Good Example*
+
+	function carouselPagination() {
+
+	}
+
+<br />
+
+#### You <b>MUST</b> name your Behavior properties and methods using Camel Case
+
+This allows for consistency and better readability, as it is considered a convention within JavaScript to use Camel Case when naming any custom properties or methods.
+
+*Example*
+
+	var myCustomProperty = "Some Text";
+
+	var myCustomMethod = function(myCustomParameter) {
+	    alert(myCustomParameter);
+	}
+
+<br />
+
+#### You <b>SHOULD</b> name any constructors which you create using Pascal Case
+
+This allows for consistency and better readability, as it is considered a convention within JavaScript.
+
+*Example*
+
+	var MyConstructorFunction = function() {
+
+	}
+
+	var myInstance = new MyConstructorFunction();
+
+<br />
+
+#### You <b>SHOULD</b> name any constructors which you create using Pascal Case
+
+This allows for consistency and better readability, as it is considered a convention within JavaScript.
+
+*Example*
+
+	var MyConstructorFunction = function() {
+
+	}
+
+	var myInstance = new MyConstructorFunction();
+
+<br />
+
+#### When you store JQuery wrapped objects within variables, you <b>SHOULD</b> prefix the variable name with a dollar sign
+
+This allows for better readability, and you can visually distinguish between which variables are JQuery wrapped, and which aren't.
+
+*Example*
+
+	var $navElement = $('.nav li');
+
+<br />
+
+#### If you want to have private properties contained in your objects, you <b>SHOULD</b> prefix them with an underscore
+
+This lets fellow maintainers know that those properties <b>SHOULD</b> be kept private within a specific object.
+
+It is also considered convention within the JavaScript community.
+
+*Example*
+
+	myObj._myPrivateProperties = "Some private text";
+
+<br />
+
+#### If you are to create get/set methods within your Behaviour, you <b>SHOULD</b> prefix your method with the relevant action
+
+Being explicit allows fellow maintainers to understand straight away what a certain method does or requires parameter wise, without looking too much into the functionality.
+
+*Bad Example*
+
+	person.age();
+	person.age(25);
+
+*Good Example*
+
+	person.getAge();
+	person.setAge(25);
+
+<br />

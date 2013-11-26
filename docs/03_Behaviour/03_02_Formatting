@@ -1,0 +1,87 @@
+#### You <b>MUST</b> always assign variables at the top of their scope
+
+This helps with variable declaration and hoisting issues.
+
+*Bad Example*
+
+	function myBadFunc() {
+	     alert(someLocalVariable);
+	     var someLocalVariable = "Some Text";
+	     someLocalVariable = "Some More Text";
+	     var someOtherVariable = "Some Other Text";
+	     return someOtherVariable;
+	}
+
+*Good Example*
+
+	function myGoodFunc() {
+	     var someLocalVariable = "Some Text";
+	         someOtherVariable = "Some Other Text";
+	     alert(someLocalVariable);
+	     someLocalVariable = "Some More Text";
+	     return someOtherVariable;
+	}
+
+<br />
+
+#### When testing equality you <b>SHOULD</b> use boolean conversion
+
+To prevent inaccurate or multiple tests of truthy values, you should use boolean conversion to remove any extra processing steps.
+
+*Bad Example*
+
+	var foo = '',
+	    bar = [];
+
+	// Do some processing
+
+	if (foo == '') {
+	    // Do some more processing
+	}
+
+	if (bar.length > 0) {
+	    // Do some other processing
+	}
+
+*Good Example*
+
+	var foo = '', 
+	    bar = [];
+
+	// Do some processing
+
+	if (!! foo) {
+	    // Do some more processing
+	}
+
+	if (!! bar.length) {
+	    // Do some other processing
+	}
+
+*Unaffected Example*
+
+	var foo = false;
+
+	// Do some processing
+
+	if (foo) {
+	    // Do some more processing
+	}
+
+<br />
+
+#### You <b>SHOULD</b> always use one var statement when declaring multiple variables
+
+This allows for better readability and reduces the number of characters you are required to type.
+
+*Bad Example*
+
+	var myFirstVariable = "First Variable";
+	var mySecondVariable = "Second Variable";
+
+*Good Example*
+
+	var myFirstVariable = "First Variable",
+    	mySecondVariable = "Second Variable";
+
+<br />

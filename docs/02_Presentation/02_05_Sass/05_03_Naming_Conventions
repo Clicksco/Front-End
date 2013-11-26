@@ -1,0 +1,21 @@
+#### All variables <b>SHOULD</b> be named so they explicitly display there aesthetic or purpose back to the developer without any confusion
+
+Explicitly stating what a variable contains is a lot more memorable to a fellow maintainer, than using a long generic string which is forgetful, and has you reaching for your variables file, every time you require to use it.
+
+*Example:*
+
+	// ================
+	// Font Family Variables
+	// ================
+
+	$font-family-sans-serif: 'sans-serif';
+	$font-family-helvetica-neue: Helvectica-Neue, $font-family-sans-serif;
+
+	// ================
+	// Color Variables
+	// ================
+
+	$color-blue-dark: #0000FF;
+	$color-blue-light: '#00FFFF';
+
+<br />

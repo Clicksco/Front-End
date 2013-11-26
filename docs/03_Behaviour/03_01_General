@@ -1,0 +1,61 @@
+#### You <b>MUST</b> always use the var keyword when declaring variables
+
+Omitting the var keyword will pollute the global namespace and could lead to unexpected results within your script.
+
+*Bad Example*
+
+	myGlobalVariable = "This is incorrect"
+
+*Good Example*
+
+	var myLocalVariable = "This is correct"
+
+<br />
+
+#### If you require to call a function before it is assigned, you <b>MUST</b> use a function declaration
+
+Because of how hoisting works, using a function expression will return undefined if you try to reference it before it is assigned and error if you try to call it before it is assigned.
+
+Because function declarations are loaded before any code is executed, calling or referencing one will not return undefined or an error.
+
+*Bad Example*
+
+	console.log(someFunc) // undefined
+	someFunc(); // TypeError - someFunc is not a function
+
+	function someFunc() {
+	     console.log("some text");
+	}
+
+*Good Example*
+
+	someFunc(); // some text
+
+	var someFunc = function() {
+	    console.log("some text");
+	}
+
+<br />
+
+#### When doing any DOM manipulation or lookup, you <b>SHOULD</b> cache the necessary DOM element
+
+This is a performance benefit, as you no longer have to reach into the DOM for the necessary element, every time you would like to perform any manipulation.
+
+*Bad Example*
+
+	function myFunc() {
+	    $('.ele').hide();
+	    $('.ele').height(30);
+	    $('.ele').fadeIn();
+	}
+
+*Good Example*
+
+	function myFunc() {
+	    var $ele = $('.ele');
+	    $ele.hide();
+	    $ele.height(30);
+	    $ele.fadeIn();
+	}
+
+<br />

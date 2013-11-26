@@ -18,11 +18,11 @@ Implementing attributes in this order allows for better readability and consiste
 
 *Bad Example*
 
-	<img href="some-image.jpg" id="some-page-location-hook" data-width="600" alt="some image" class="some-class" />
+	<img src="some-image.jpg" id="some-page-location-hook" data-width="600" alt="some image" class="some-class" />
 
 *Good Example*
 
-	<img id="some-page-location-hook" class="some-class" data-width="600" href="some-image.jpg" alt="some image" />
+	<img id="some-page-location-hook" class="some-class" data-width="600" src="some-image.jpg" alt="some image" />
 
 <br />
 

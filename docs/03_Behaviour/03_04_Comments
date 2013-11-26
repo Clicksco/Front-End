@@ -1,0 +1,37 @@
+#### If you would like to communicate a certain piece of code which you feel needs a refactor or is not finished, back to fellow maintainers, you <b>MUST</b> add a comment prefixed with either "@Todo" or "@fixme".
+
+If you have a spike within your project, using this approach will allow maintainers to quickly scan a file and understand what parts could do with a new approach or requires additional work.
+
+Using this approach, you COULD also contain a description of why you feel a certain method requires a refactor and also recommend new approaches.
+
+*@Todo Example*
+
+	/*
+	 * @Todo
+	 *
+	 * A description of what is left to do on this specific piece of code
+	 *
+	 * Recommended solution if you have one
+	 */
+
+*@Fixme Example*
+
+	/*
+	 * @Fixme
+	 *
+	 * A description of why you think it should be refactored e.g. bad performance
+	 *
+	 * Recommended solution if you have one
+	 */
+
+<br />
+
+#### You <b>SHOULD</b> comment any functionality using the format defined by JSDoc
+
+This allows for a consistent approach across all code bases within the organisation, as well as being a convention which we could later use to generate documentation, once our scripts start to get large enough within applications.
+
+*Resources*
+
+- [JSDoc](http://usejsdoc.org/about-getting-started.html)
+
+<br />

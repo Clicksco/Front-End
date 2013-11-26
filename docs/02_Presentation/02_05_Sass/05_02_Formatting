@@ -1,0 +1,68 @@
+#### You <b>MUST</b> place @extend statements at the top of your declaration block
+
+This allows maintainers to see straight away what module the styles are related too.
+
+*Example:*
+
+	.box {
+       background: red;
+       color: hot-pink;
+	}
+
+	.box--border {
+	      @extend .box;
+	      border: 1px solid black;
+	}
+
+<br />
+
+#### When nesting your styles, you <b>MUST</b> add additional space, above and below your nested declaration
+
+This allows for better readability for fellow maintainers of the codebase.
+
+*Example:*
+
+	.box {
+	      background: black;
+
+	       p {
+	           color: white;
+	       }
+
+	}
+	
+<br />
+
+#### Variables, Mixins and Functions <b>MUST</b> be stored within their own partial file
+
+To help with better organisation of your variables, mixins and functions, they should each be store in their own separate partial files such as.
+
+*Example:*
+
+	_variables.scss
+	_mixins.scss
+	_functions.scss
+
+<br />
+
+#### All variables <b>MUST</b> be grouped together within the _vars file based on their purpose
+
+This allows for better organisation and readability within the variables file.
+
+*Example:*
+
+	// ================
+	// Font Family Variables
+	// ================
+
+	$font-family-sans-serif: 'sans-serif';
+	$font-family-helvetica-neue: Helvectica-Neue, 'sans-serif';
+
+	// ================
+	// Color Variables
+	// ================
+
+	$color-blue-dark: #0000FF;
+	$color-blue-light: '#00FFFF';
+
+<br />
