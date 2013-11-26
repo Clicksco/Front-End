@@ -13,12 +13,36 @@
 
 // Example Use:
 //
-//   include calc-rem("font-size", 16px);
+//   @include calc-rem("font-size", 16px);
 //
 
 @mixin calc-rem($property, $value, $context: $font-size-base) {
     #{$property}: $value;
     #{$property}: cr($value, $context);
+}
+
+// =============================
+// Layout Mixins
+// =============================
+
+// Add a media query which has a max-width value of the parameter provided
+// Note: If you would like to implement a mobile first approach, please change max-width to min-width
+
+//   Parameter Description:
+//
+//   $breakpoint - An Integer value of the max-width you would like your media query to cover
+//
+
+// Example Use:
+//
+//   @include media-query(648) {
+//       .box {
+//           color: red;
+//       }
+//   }
+
+@mixin media-query($breakpoint) {
+    @media only screen and (max-width: $breakpoint + px) { @content; }
 }
 
 
