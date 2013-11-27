@@ -6,79 +6,75 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
-    pkg: grunt.file.readJSON('package.json'),
+    clean: {
+      img: [
+        'dist/images/**/*'
+      ],
+      js: [
+        'dist/js/**/*'
+      ],
+      css: [
+        'dist/css/**/*'
+      ],
+      styleguide: [
+        'styleguide'
+      ]
+    },
 
-    src:  'src',
-    dist: 'dist',
-
-    scripts: {
-      src: {
-        dir: '<%= src %>/scripts',
+    copy: {
+      styleguide: {
         files: [
-          '<%= scripts.src.dir %>/main.js'
-        ],
-      },
-      dist: {
-        dir: '<%= dist %>/js',
-        uncompressed: '<%= scripts.dist.dir %>/main.js',
-        compressed:   '<%= scripts.dist.dir %>/compressed/main.min.js'
+          {src: ['src/styles/styleguide.md'], dest: 'dist/css/styleguide.md'}
+        ]
       }
     },
 
-    styles: {
-      src: {
-        dir: '<%= src %>/styles',
-        files: [
-          '<%= styles.src.dir %>/main.scss'
-        ],
-      },
-      dist: {
-        dir: '<%= dist %>/css',
-        uncompressed: '<%= styles.dist.dir %>/main.css',
-        compressed:   '<%= styles.dist.dir %>/compressed/main.min.css'
-      }
-    },
-
-    images: {
-      src: {
-        dir: '<%= src %>/images',
-      },
-      dist: {
-        dir: '<%= dist %>/images',
+    shell: {
+      styleguide: {
+        command: 'kss-node dist/css styleguide --css dist/css/main.doc.css --template styleguide-template'
       }
     },
 
     jshint: {
       gruntfile: 'Gruntfile.js',
-      files: ['<%= scripts.src.files %>'],
+      files: ['dist/js/compressed/main.min.js'],
       options: {
         jshintrc: '.jshintrc'
       }
     },
 
-    concat: {
-      js: {
-        nonull: true,
-        src: '<%= scripts.src.files %>',
-        dest: '<%= scripts.dist.uncompressed %>'
+    uglify: {
+      jsModules: {
+          files: {
+            'dist/js/compressed/main.min.js': ['src/scripts/modules/*.js']
+          }
+      },
+      jsVendor: {
+        files: {
+          'dist/js/compressed/vendor.min.js': ['src/scripts/vendor/*.js']
+        }
       }
     },
 
-    uglify: {
-      dist: {
-        src: ['<%= concat.js.dest %>'],
-        dest: '<%= scripts.dist.compressed %>'
-      },
-    },
-
     sass: {
+      options: {
+        cacheLocation: '.sass-cache'
+      },
+      prod: {
+        options: {
+           style: 'compressed'
+        },
+        files: [{
+          'dist/css/compressed/main.min.css': 'src/styles/main.scss'
+        }]
+      },
       dev: {
         options: {
-          style: 'expanded',
+            style: 'nested'
         },
-        files: {
-          '<%= styles.dist.uncompressed %>': '<%= styles.src.files %>'
-        }
+        files: [{
+          'dist/css/main.doc.css': 'src/styles/main.scss'
+        }]
       }
     },
 
@@ -95,20 +91,8 @@ module.exports = function(grunt) {
             'android 4'
           ]
         },
-        src: '<%= styles.dist.uncompressed %>',
-        dest: '<%= styles.dist.uncompressed %>'
-      }
-    },
-
-    cssmin: {
-      combine: {
-        options: {
-          keepSpecialComments: 0,
-          report: 'min'
-        },
-        files: {
-          '<%= styles.dist.compressed %>': '<%= styles.dist.uncompressed %>'
-        }
+        src: 'dist/css/main.doc.css',
+        dest: 'dist/css/compressed/main.min.css'
       }
     },
 
@@ -120,9 +104,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: '<%= images.src.dir %>',
+          cwd: 'src/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= images.dist.dir %>',
+          dest: 'dist/images',
         }],
       }
     },
@@ -131,7 +115,7 @@ module.exports = function(grunt) {
       sass: {
         options: {
           title: 'Success!',
-          message: 'Your styles have been successfully compiled'
+          message: 'Your styles have been successfully compiled and your styleguide has been built'
         }
       },
       scripts: {
@@ -162,16 +146,16 @@ module.exports = function(grunt) {
 
       sass: {
         files: 'src/styles/**/*.scss',
-        tasks: ['sass:dev', 'autoprefixer', 'cssmin', 'notify:sass']
+        tasks: ['clean:css', 'sass:dev', 'sass:prod', 'autoprefixer', 'copy', 'shell', 'notify:sass']
       },
 
       scripts: {
         files: '<%= jshint.files %>',
-        tasks: ['jshint', 'concat', 'uglify', 'notify:scripts']
+        tasks: ['uglify', 'jshint', 'notify:scripts']
       },
 
       images: {
-        files: '<%= images.src.dir %>/**/*.{png,jpg,jpeg,gif}',
+        files: 'src/images/*.{png,jpg,jpeg,gif}',
         tasks: ['imagemin', 'notify:images']
       },
 
@@ -181,14 +165,13 @@ module.exports = function(grunt) {
         },
         files: [
           'Gruntfile.js',      // reload on Gruntfile change
-          '<%= dist %>/**/*'   // reload any change in dist
+          'dist/**/*'          // reload any change in dist
         ]
       }
     }
 
   });
   
-  grunt.loadNpmTasks('sassdown');
   grunt.registerTask('default', ['watch']);
 
 };
