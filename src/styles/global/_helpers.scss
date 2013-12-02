@@ -41,8 +41,8 @@
         $return-rem:$return-rem + ' ' + (strip-units($value) / $base) + rem;
     }
 
-    #{$parameter}: unquote($return-px);
-    #{$parameter}: unquote($return-rem);
+    #{$property}: unquote($return-px);
+    #{$property}: unquote($return-rem);
 }
 // Calculate the PX unit from inputted REM values, and return both pixels and REMs to support older browsers
 //
@@ -65,8 +65,8 @@
         $return-rem:$return-rem + ' ' + $value;
     }
 
-    #{$parameter}: unquote($return-px);
-    #{$parameter}: unquote($return-rem);
+    #{$property}: unquote($return-px);
+    #{$property}: unquote($return-rem);
 }
 
 // Calculate a percentage value using the formula: target ÷ context
