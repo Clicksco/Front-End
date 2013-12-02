@@ -2,7 +2,14 @@
 // Structural Helpers
 // =============================
 
-@mixin clearfix {
+// Clearfix placeholder
+
+// Example Use:
+//
+//   @extend %clearfix;
+//
+
+%clearfix {
 
   &:before,
   &:after {
@@ -12,7 +19,7 @@
 
   &:after {
     clear: both;
-  }
+  }  
 
 }
 
