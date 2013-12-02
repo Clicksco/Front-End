@@ -13,12 +13,8 @@
 // 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
 //    nodes.
 //
-// Example Use:
-//
-//   @extend %text-truncate;
-//
 
-%text-truncate {
+.text-truncate {
     max-width: 100%; // 1
     overflow: hidden !important;
     text-overflow: ellipsis !important;
@@ -34,10 +30,8 @@
 // Removed completely from document, and not visible to screen readers
 // Example Use:
 //
-//   @extend %is-hidden;
-//
 
-%is-hidden {
+.is-hidden {
     display: none !important;
     visibility: hidden !important;
 }
@@ -47,10 +41,8 @@
 //
 // Example Use:
 //
-//   @extend %is-hidden-visually;
-//
 
-%is-hidden-visually {
+.is-hidden-visually {
     position: absolute !important;
     overflow: hidden !important;
     width: 1px !important;
