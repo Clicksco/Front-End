@@ -20,16 +20,53 @@
 // RWD Helpers
 // =============================
 
-// Calculate the REM unit, and return both pixels and REMs to support older browsers
+// Calculate the REM unit from inputted PX values, and return both pixels and REMs to support older browsers
+//
+// @param   $property   string  css property
+// @param   $values     list    list of values to be calculated for the property
+// @param   $base       string  base size of for the calculation
 
 // Example Use:
 //
-//   @include calc-rem("font-size", 16px);
+//   @include calc-rem("font-size", 16px 32px);
 //
+@mixin calc-rem($property, $values, $base: 16px) {
+    $return-px: '';
+    $return-rem: '';
 
-@mixin calc-rem($property, $value, $context: $font-size-alpha) {
-    #{$property}: $value;
-    #{$property}: cr($value, $context);
+    $base: strip-units($base);
+
+    @each $value in $values {
+        $return-px:$return-px + ' ' + $value;
+        $return-rem:$return-rem + ' ' + (strip-units($value) / $base) + rem;
+    }
+
+    #{$parameter}: unquote($return-px);
+    #{$parameter}: unquote($return-rem);
+}
+// Calculate the PX unit from inputted REM values, and return both pixels and REMs to support older browsers
+//
+// @param   $property   string  css property
+// @param   $values     list    list of values to be calculated for the property
+// @param   $base       string  base size of for the calculation
+
+// Example Use:
+//
+//   @include calc-px("font-size", 1.5rem 2rem);
+//
+@mixin calc-px($property, $values, $base: 16px) {
+    $return-px: '';
+    $return-rem: '';
+
+    $base: strip-units($base);
+
+    @each $value in $values {
+        $return-px:$return-px + ' ' + ceil(strip-units($value) * $base) + px;
+        $return-rem:$return-rem + ' ' + $value;
+    }
+
+    #{$parameter}: unquote($return-px);
+    #{$parameter}: unquote($return-rem);
 }
 
 // Calculate a percentage value using the formula: target ÷ context
@@ -44,7 +81,7 @@
 }
 
 // Calculate a EM value using the formula: target ÷ context
-// Your context is the font-size of the parent element. 
+// Your context is the font-size of the parent element.
 // If you set the value on a textual element, your context is the element font-size
 
 // Example Use:
@@ -54,5 +91,20 @@
 
 @function calc-em( $target, $context ) {
     @return $target / $context * 1em;
+}
+
+// Strips all units from a value and returns.
+//
+// @param   $number     string	value to be stripped.
+// @return  int
+
+// Example Use:
+//
+// strip-units(32px);
+//
+// @return: 32
+//
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
 }
 

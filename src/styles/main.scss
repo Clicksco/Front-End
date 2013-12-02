@@ -27,3 +27,12 @@
 // =============================
 
 @import 'global/shame';
+
+.calc-rem {
+	@include calc-rem('margin', 32px 16px);
+}
+
+.calc-px {
+	@include calc-px('font-size', 1.5rem 2rem);
+}
+
