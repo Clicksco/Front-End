@@ -6,19 +6,18 @@
 
 //   Parameter Description:
 //
-//   $property - The property which you want to set the REM value on.
 //   $value - The value (in pixels) of the elements property you are setting the REM value for
 //   $context - This value is mapped back to the $font-size-base variable set within the _vars.scss partial
 //
 
 // Example Use:
 //
-//   @include calc-rem("font-size", 16px);
+//   @include font-sizing(32px);
 //
 
-@mixin calc-rem($property, $value, $context: $font-size-base) {
-    #{$property}: $value;
-    #{$property}: cr($value, $context);
+@mixin font-sizing($value, $context: $font-size-base) {
+    font-family: $value;
+    font-family: calc-rem($value, $context);
 }
 
 // =============================
@@ -42,7 +41,9 @@
 //   }
 
 @mixin media-query($breakpoint) {
-    @media only screen and (max-width: $breakpoint + px) { @content; }
+    @media only screen and (max-width: $breakpoint + px) { 
+    	@content; 
+    }
 }
 
 

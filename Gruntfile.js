@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
     shell: {
       styleguide: {
-        command: 'kss-node dist/css styleguide --css dist/css/main.doc.css --template styleguide-template'
+        command: 'kss-node dist/css styleguide --css dist/css/main.doc.css'
       }
     },
 
@@ -118,6 +118,12 @@ module.exports = function(grunt) {
           message: 'Your styles have been successfully compiled and your styleguide has been built'
         }
       },
+      styleguide: {
+        options: {
+          title: 'Success!',
+          message: 'Your styleguide has been generated'
+        }
+      },
       scripts: {
         options: {
           title: 'Success!',
@@ -146,7 +152,7 @@ module.exports = function(grunt) {
 
       sass: {
         files: 'src/styles/**/*.scss',
-        tasks: ['clean:css', 'sass:dev', 'sass:prod', 'autoprefixer', 'copy', 'shell', 'notify:sass']
+        tasks: ['clean:css', 'sass:dev', 'sass:prod', 'autoprefixer', 'notify:sass']
       },
 
       scripts: {
@@ -168,10 +174,12 @@ module.exports = function(grunt) {
           'dist/**/*'          // reload any change in dist
         ]
       }
+      
     }
 
   });
   
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('styleguide', ['clean:css', 'sass:dev', 'sass:prod', 'autoprefixer', 'copy', 'shell', 'notify:styleguide']);
 
 };

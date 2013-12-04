@@ -37,3 +37,11 @@
 @function calc-em( $target, $context ) {
     @return $target / $context * 1em;
 }
+
+// Calculate a REM value using the formula: target ÷ context
+// Your context is the font-size of the root element. 
+// Note - This is required for font-sizing mixin
+
+@function calc-rem( $target, $context: $font-size-base ) {
+    @return $target / $context * 1rem;
+}
