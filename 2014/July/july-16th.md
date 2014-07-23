@@ -2,16 +2,16 @@
 
 ### Front End Standards 
 
-- Move solely to Github Pages and move away from hosting internally. James Mills mentioned having an internal setup for docs.clicksco.com and then we could set up a deployment hook. Needs more discussion. **Review next week**
+- Move solely to Github Pages and move away from hosting internally. James Mills mentioned having an internal setup for docs.clicksco.com and then we could set up a deployment hook. Needs more discussion. **Review next week** **UPDATE 23rd July - docs.clicksco.com seems like the desired approach. Currently reviewing MD to static site generators**
 - Look into a new documentation engine. **Assigned to Ben Cooper**
 
 ### Front End Induction Document 
 
-- Give access to everyone on the front end team **Assigned to Ben Cooper**
+- Give access to everyone on the front end team **Assigned to Ben Cooper** **UPDATE 23rd July - Give all + Graham M access**
 
 ### Viaduct 
 
-- Get admin access, need to speak to Jon Park **Assigned to Ben Cooper**
+- Get admin access, need to speak to Jon Park **Assigned to Ben Cooper** **UPDATE 23rd July - Done**
 
 ### Front End Team Process
 
