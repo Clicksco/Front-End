@@ -1,6 +1,11 @@
-Front-End-Standards
-===================
+# Clicksco Front End Development Team
 
-The purpose of this document is to provide guidelines for writing Front End code. Code conventions are important for the long-term maintainability. The goal is to have all code in any code-base within the organisation look like a single person typed it, even when many people are contributing to it.
+## Introduction
 
+Clicksco's Front End Development team is made up of a young vibrant group of talented individuals, who live and breath the Front End world and community.
 
+Focus and Enthusiasm is key in this department, as we strive to create a team who are immersed in their passion, and a culture which consists of constant collaboration and experimentation.
+
+## Ethos
+
+We create applications which are highly performant, using a precision planned Front End architecture. Our workflow is largely automated, so high quality work is implemented and tested through various strategies as efficiently as possible.
