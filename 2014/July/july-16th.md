@@ -1,19 +1,24 @@
-## Wednesday 16th July - Weekly Minutes
+# Weekly Minutes - Week 1 - Wednesday 16th July 2014
 
-### Front End Standards 
+**Attendees**
+- Ben Cooper
+- Lewis Morris
+- Steven Roberts
 
-- Move solely to Github Pages and move away from hosting internally. James Mills mentioned having an internal setup for docs.clicksco.com and then we could set up a deployment hook. Needs more discussion. **Review next week** **UPDATE 23rd July - docs.clicksco.com seems like the desired approach. Currently reviewing MD to static site generators**
-- Look into a new documentation engine. **Assigned to Ben Cooper**
+## Front End Standards 
 
-### Front End Induction Document 
+- Move solely to Github Pages and move away from hosting internally. James Mills mentioned having an internal setup for docs.clicksco.com and then we could set up a deployment hook. Needs more discussion. **Review next week** **UPDATE - docs.clicksco.com seems like the desired approach. Currently reviewing MD to static site generators**
+- Look into a new documentation engine. **Assigned to BC - UPDATE - Irrelevant as organisation have agreed upon on docs.clicksco.com**
 
-- Give access to everyone on the front end team **Assigned to Ben Cooper** **UPDATE 23rd July - Give all + Graham M access**
+## Front End Induction Document 
 
-### Viaduct 
+- Give access to everyone on the front end team **Assigned to BC** **UPDATE - Access given to team and Graham M**
 
-- Get admin access, need to speak to Jon Park **Assigned to Ben Cooper** **UPDATE 23rd July - Done**
+## Viaduct 
 
-### Front End Team Process
+- Get admin access, need to speak to Jon Park **Assigned to BC** **UPDATE - Implemented**
+
+## Front End Team Process
 
 - Our Ethos - Performance, Automation, Testing, Architecture. This is the mentality we will take moving forward and new projects will reflect these principles.
 
