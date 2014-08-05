@@ -9,7 +9,7 @@
 
 - Split meeting into two separate meetings. One which relates to going over standards, guides and various changes. One to do a learning session. **Assigned to BC**
 
-- JS Standards are not to be a focus at the moment, they are to be put on the back burner. Focus on learning JS and writing technical documentation on why we have choose to use technologies such as Angular, Knockout etc.
+- JS Standards are not to be a focus at the moment, they are to be put on the back burner. Focus on learning JS and writing technical documentation on why we have choosen to use technologies such as Angular, Knockout etc.
 
 - Take standards out of daux.io, ready for porting across to docs.clicksco.com and put them into MD files. Remove all of the bulk with regards to CSS etc and excess code from daux. **Assigned to BC**
 
@@ -17,7 +17,8 @@
 
 ### Markup
 
-- **You <b>MUST</b> not use ID selectors** - Take out behaviour as this should be allowed. **Assigned to BC**
+- **You <b>MUST</b> not use ID selectors** - Remove behaviour from this standard, as this should be allowed. **Assigned to BC**
+- Should we group classes which share relation? [Grouping Related Classes in your Markup](http://csswizardry.com/2014/05/grouping-related-classes-in-your-markup/)
 
 ### Presentation
 
