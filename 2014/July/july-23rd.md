@@ -9,7 +9,7 @@
 
 - Steve to create a Github account. **Assigned to SR - UPDATE - Implemented by SR**
 - Steve requires access to Clicksco Github Account. **Speak to Jon or James** **Assigned to BC - UPDATE - Implemented to SR**
-- Set up Hipchat Hook for Notifications regarding minutes being committed - **Speak Jon or James** **Assigned to LM**
+- Set up Hipchat Hook for Notifications regarding minutes being committed - **Speak Jon or James** **Assigned to LM - UPDATE - Service Hook added to Github**
 - Revoke access to Front End Repo for anyone who is not in the front end team, until the standards are completed. **Assigned to BC - UPDATE - This can not happen as it is team access. Spoke to team and they are aware of the approach**
 
 ## Front End Team Process
