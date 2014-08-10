@@ -7,26 +7,26 @@
 
 ## General
 
-- Split meeting into two separate meetings. One which relates to going over standards, guides and various changes. One to do a learning session. **Assigned to BC**
+- Split meeting into two separate meetings. One which relates to going over standards, guides and various changes. One to do a learning session. **Assigned to BC - UPDATE - On Hold**
 
 - JS Standards are not to be a focus at the moment, they are to be put on the back burner. Focus on learning JS and writing technical documentation on why we have choosen to use technologies such as Angular, Knockout etc.
 
-- Take standards out of daux.io, ready for porting across to docs.clicksco.com and put them into MD files. Remove all of the bulk with regards to CSS etc and excess code from daux. **Assigned to BC**
+- Take standards out of daux.io, ready for porting across to docs.clicksco.com and put them into MD files. Remove all of the bulk with regards to CSS etc and excess code from daux. **Assigned to BC - UPDATE - Ongoing**
 
 ## Standards
 
 ### Markup
 
 - **You <b>MUST</b> not use ID selectors** - Remove behaviour from this standard, as this should be allowed. **Assigned to BC**
-- Should we group classes which share relation? [Grouping Related Classes in your Markup](http://csswizardry.com/2014/05/grouping-related-classes-in-your-markup/)
+- Should we group classes which share relation? [Grouping Related Classes in your Markup](http://csswizardry.com/2014/05/grouping-related-classes-in-your-markup/) **UPDATE - Added to Week 4 as a task.**
 
 ### Presentation
 
 #### Sass
 
-- Should we use BEM syntax in Sass, as it was added in 3.3? **Up for discussion**
-- Using classes or placeholders in @extend? Lewis to research what should be used. - **Assigned to LM**
-- Naming of variables. Should we take the same approach as how we name our classes? **Up for discussion**
+- Should we use BEM syntax in Sass, as it was added in 3.3? **Up for discussion - UPDATE - Added to Week 4 as a task.**
+- Using classes or placeholders in @extend? Lewis to research what should be used. - **Assigned to LM - UPDATE - Added to Week 4 as a task.**
+- Naming of variables. Should we take the same approach as how we name our classes? **Up for discussion - UPDATE - Added to Week 4 as a task.**
 
 
 
