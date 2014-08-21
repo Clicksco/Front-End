@@ -7,10 +7,10 @@
 
 ## General
 
-- Kick Off Boilerplate project. **Assigned to BC**
-- Start discussion on tooling requirements **Assigned to BC**
+- Kick Off Boilerplate project. **Assigned to BC - UPDATE - Branch created and tickets added to issues to discuss requirements and implementation**
+- Start discussion on tooling requirements **Assigned to BC - UPDATE - Tickets added to issues to discuss**
 
 ## Boilerplate
 
-- Add tickets to kick off tooling requirements for Boilerplate. **Assigned to all**
+- Add tickets to kick off tooling requirements for Boilerplate. **Assigned to all - UPDATE - Implemented**
 
