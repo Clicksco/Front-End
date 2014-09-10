@@ -19,6 +19,22 @@ This means that you use BEM sparingly, and only in situations where you feel pat
 
 <br />
 
+#### You <b>SHOULD</b> group related classes together in your Markup
+
+When adding classes into class attributes within your Markup, you <b>SHOULD</b> contain all related classes inside of square brackets.
+
+*Example*
+
+	<div class="[ foo  foo--bar ]  baz">
+
+This makes it easier for developers to scan the Markup for our internal products, and gain an understanding of the project.
+
+*Note - Please be aware that whilst [ foo foo--bar ] is completely valid, [ foo foo--bar] is not, as the square bracket is parsed as part of the class itself.*
+
+*Resources*
+
+- [Grouping Related Classes In Your Markup](http://csswizardry.com/2014/05/grouping-related-classes-in-your-markup/)
+
 #### You <b>SHOULD</b> name all of your classes so they are sensible and are not specific to the content
 
 Classes do not have any impact on semantics.

@@ -16,6 +16,41 @@ This allows maintainers to see straight away what module the styles are related 
 
 <br />
 
+#### When writing selectors which are using BEM, you <b>MUST</b> use the syntax provided in Sass 3.3
+
+Sass 3.3 introduced a new construct which allowed you to suffix selectors and next your modifiers and elements within your block.
+
+*Example*
+
+	.block {
+
+	  //.block--modifier
+
+	  &--modifier {
+	      width: 50%;
+
+	    //.block--modifier__element
+
+	    &__element {
+	        color: red;
+	    }
+
+	  }
+
+	  //.block__element
+
+	  &__element {
+	      color:black;
+	  }
+
+	}
+
+*Note - When using this approach, it is recommended that add a comment above your modifiers and elements which contains the full class name for that specific item. This allows developers to do a find and replace on the class name.*
+
+*Resources*
+
+- [Writing modular CSS (BEM/OOCSS) selectors with Sass 3.3](http://benfrain.com/writing-modular-css-bemoocss-selectors-sass-3-3/)
+
 #### When nesting your styles, you <b>MUST</b> add additional space, above and below your nested declaration
 
 This allows for better readability for fellow maintainers of the codebase.
@@ -30,22 +65,24 @@ This allows for better readability for fellow maintainers of the codebase.
 	       }
 
 	}
-	
+
 <br />
 
-#### Variables, Mixins and Functions <b>MUST</b> be stored within their own partial file
+#### Variables, Mixins and Functions <b>MUST</b> be stored within their own partial files
 
 To help with better organisation of your variables, mixins and functions, they should each be store in their own separate partial files such as.
 
 *Example:*
 
-	_variables.scss
+	_settings.scss
 	_mixins.scss
 	_functions.scss
 
+*Note - With variables, a _settings.scss partial should be created in the root, as this is the approach which Viaduct takes. If you want to create variables specific to a certain partial, e.g. Feature switches, it is recommended that you <b>SHOULD</b> prefix all variables with an underscore to mark it as private.*
+
 <br />
 
-#### All variables <b>MUST</b> be grouped together within the _vars file based on their purpose
+#### All variables <b>MUST</b> be grouped together within the _settings file based on their purpose
 
 This allows for better organisation and readability within the variables file.
 

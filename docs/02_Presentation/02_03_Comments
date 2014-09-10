@@ -1,12 +1,58 @@
-#### You <b>SHOULD</b> write your comments in the format specified via the StyleDocco website
+#### You <b>MUST</b> write all comments using the single line format.
 
-Writing comments in this format will allow the Grunt task to produce a component library, which would be a great reference to new maintainers of your codebase.
+Writing single line comments, means all comments are stripped out when tasks build/dev tasks are run.
 
-Even if you feel the style guide is not necessary for the project you are working on, implementing your comments in this way will allow other maintainers of the projects codebase a context in which the module would be used.
+*Bad Example*
 
-*Resources:*
+	.box {
+		background: red; /* Your Comment */
+	}
 
-- [Style Docco Website](http://jacobrask.github.io/styledocco/)
+*Good Example*
+
+	.box {
+		background: red; // Your Comment
+	}
+
+#### You <b>SHOULD</b> write your comments in specific formats based on the context within your codebase
+
+Commenting in your codebase is very important for communication, as well seperation of modules and providing notes which are relevant for how/what a piece of functionality does/is.
+
+When defining new modules, modifiers or sectioning partials, it is recommended you use the following format.
+
+	// =============================
+	// Base Flag Pattern Styling
+	// =============================
+
+If you are creating patterns or functionality, which needs to be shown in a visual manner, you <b>COULD</b> provide provide diagrams, like the following;
+
+	//
+	//    Flag Sidebar               Flag Body
+	//
+	//                          ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	//                          ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	//    ~ ~ ~ ~ ~ ~           ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	//    ~         ~           ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	//    ~         ~           ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	//    ~         ~           ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	//    ~ ~ ~ ~ ~ ~           ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	//                          ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	//                          ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	//
+
+Lastly, when it comes to commenting constructs such as mixins and functions, it is recommended you provide commenting for both example use and parameter descriptions;
+
+	//
+	// Example Use:
+	//
+	// @include rem-sizing("font-size", 32px);
+	//
+	// Parameter Description:
+	//
+	// $property - A string value which contains the property which you want to set a REM unit value for. // "font-size"
+	// $value    - The value (in pixels) of the elements property you are setting the REM value for.      // 12px
+	// $context  - This value is mapped back to the $font-size-base variable set within the _settings.scss partial.
+	//
 
 <br />
 
@@ -33,5 +79,5 @@ If the comment is required for whole declaration blocks, please include the comm
 	.box {
 	       background-color: red;
 	}
-	
+
 <br />
